@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight, Instagram, Linkedin } from 'lucide-react';
 import { brandData } from '../data/brandData';
+import { Logo } from './Logo';
 
 export const Footer = () => {
   return (
@@ -10,16 +11,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center space-x-3">
-              <img src="/logo/aura-symbol.svg" alt="AURA Symbol" className="h-10 w-auto filter brightness-200" />
-              <div className="flex flex-col">
-                <span className="font-serif text-3xl tracking-[0.26em] font-semibold text-white">
-                  AURA
-                </span>
-                <span className="text-[9px] tracking-[0.32em] uppercase text-aura-gold-light font-sans font-medium">
-                  Interiors & Living
-                </span>
-              </div>
+            <div className="flex items-center">
+              <Logo light={true} />
             </div>
             <p className="text-sm text-neutral-300 font-light leading-relaxed max-w-sm">
               Furniture manufacturing and architectural interior design united under one roof. Handcrafted solid hardwoods, engineered modular precision, and holistic spatial transformations.

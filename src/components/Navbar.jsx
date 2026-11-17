@@ -7,7 +7,7 @@ import {
 import { useApp } from '../context/AppContext';
 import { brandData } from '../data/brandData';
 import { furnitureCategories } from '../data/furnitureData';
-import { interiorServices } from '../data/interiorsData';
+import { Logo } from './Logo';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,24 +45,8 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <img 
-                src="/logo/aura-symbol.svg" 
-                alt="AURA Symbol" 
-                className={`h-9 w-auto transition-transform duration-500 group-hover:scale-105 ${
-                  !isScrolled && isHome ? 'filter brightness-200' : ''
-                }`}
-              />
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl tracking-[0.26em] font-semibold leading-none">
-                  AURA
-                </span>
-                <span className={`text-[8px] tracking-[0.32em] uppercase font-sans mt-1 font-medium ${
-                  isScrolled || !isHome ? 'text-aura-text-secondary' : 'text-neutral-300'
-                }`}>
-                  Interiors & Living
-                </span>
-              </div>
+            <Link to="/" aria-label="AURA Home" className="transition-opacity hover:opacity-90">
+              <Logo light={!isScrolled && isHome} />
             </Link>
 
             {/* Desktop Navigation */}
